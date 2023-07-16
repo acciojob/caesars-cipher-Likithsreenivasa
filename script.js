@@ -1,5 +1,4 @@
 // Your Script here.
-
 const lookup = {
   A: "N",
   B: "O",
@@ -32,27 +31,23 @@ const lookup = {
 };
 
 function rot13(encodedStr) {
-  let decodedArr = []; // Your Result goes here
-  // Only change code below this line
-	var decodedString = "";
-
-  for (var i = 0; i < encodedString.length; i++) {
-    var char = encodedString[i];
-    var decodedChar = lookup[char];
+  let decodedArr = [];
+  for (let i = 0; i < encodedStr.length; i++) {
+    let char = encodedStr[i];
+    let decodedChar = lookup[char];
 
     if (decodedChar === undefined) {
       // Non-alphabetic character, pass it through
-      decodedString += char;
+      decodedArr.push(char);
     } else {
       // Alphabetic character, substitute with decoded char
-      decodedString += decodedChar;
+      decodedArr.push(decodedChar);
     }
   }
 
-  return decodedString;
-
-  return; //return decodedArr
+  return decodedArr.join("");
 }
+
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
